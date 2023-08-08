@@ -1,38 +1,82 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.flex-container {
   display: flex;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+h2 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.App {
+  padding: 4vh 10vw;
+}
+
+.team-members-list {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2vh;
+}
+
+.team-members-list .MemberCard {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.116);
+  max-width: 25vw;
+  min-width: 200px;
+  min-height: 35vh;
+  overflow-wrap: normal;
+  flex: 1;
+  padding: 1rem 2rem;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  border-radius: 15px;
 }
 
-.App-link {
-  color: #61dafb;
+.Form form {
+  flex-direction: column;
+  align-items: stretch;
+  width: 40vw;
+  margin: auto;
+  gap: 0.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Form form div {
+  display: flex;
+  border: 2px solid;
+  border-radius: 7px;
+  height: 2.5rem;
+}
+
+.Form form div :first-child {
+  height: 100%;
+
+  flex-grow: 0;
+}
+
+.Form form div :nth-child(2) {
+  height: 100%;
+  border-color: transparent;
+  flex-grow: 1;
+}
+
+.Form form div svg {
+  height: 2rem;
+  width: 2rem;
+  padding: 0.2rem;
+}
+
+form button {
+  border-radius: 7px;
+}
+
+form button:hover {
+  background-color: aqua;
 }
