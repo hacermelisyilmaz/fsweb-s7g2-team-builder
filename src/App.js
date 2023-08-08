@@ -4,6 +4,8 @@ import Form from "./components/Form.js";
 import "./App.css";
 
 function App() {
+  const [memberToEdit, setMemberToEdit] = useState({});
+  console.log(memberToEdit);
   const [memberList, setMemberList] = useState([
     {
       name: "Laura Athey",
@@ -37,18 +39,34 @@ function App() {
     setMemberList(updatedMemberList);
   };
 
+  const clickedToEdit = (member) => {
+    setMemberToEdit(member);
+  };
+
+  const editMember = (editedMember) => {
+    const memberListToUpdate = [...memberList];
+    memberListToUpdate.map((member) => {});
+  };
+
   return (
     <div className="App">
       <h1>The team</h1>
       <h2>Members</h2>
       <div className="team-members-list flex-container">
         {memberList.map((member, index) => {
-          return <MemberCard key={index} memberInfo={member} picID={index} />;
+          return (
+            <MemberCard
+              key={index}
+              memberInfo={member}
+              picID={index}
+              clickedToEdit={clickedToEdit}
+            />
+          );
         })}
       </div>
 
       <h2>Add a member</h2>
-      <Form addMember={addMember} />
+      <Form addMember={addMember} memberToEdit={memberToEdit} />
     </div>
   );
 }
